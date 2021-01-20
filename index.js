@@ -19,7 +19,7 @@ const questions = [
       },
       {
         type: 'input',
-        name: 'project name',
+        name: 'title',
         message: "What is your project's name?"
       },
       {
@@ -29,9 +29,9 @@ const questions = [
       },
       {
         type: 'list',
-        name: 'liscence',
+        name: 'license',
         message: 'Which license does your project have?',
-        choices: ['MIT', 'IBM', 'ISC', 'Mozilla']
+        choices: ['MIT', 'ISC', 'IBM Public License Version 1.0']
       },
       {
         type: 'input',
@@ -51,9 +51,8 @@ const questions = [
       {
         type: 'input',
         name: 'contribute',
-        messsge: 'What technologies should the user be familiar with to contribute to the repo?'
+        messsage: 'What technologies should the user be familiar with to contribute to the repo?'
       }
-
     ])
 ];
 
