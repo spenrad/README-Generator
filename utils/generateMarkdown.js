@@ -3,21 +3,20 @@
 function renderLicenseBadge(license) {
   
   var img = "";
-  var name = "License: " + data.license; 
-  var badge = `[![${name}](${img})]`;
+  var name = "License: " + license;
 
-    if (data.license === "MIT") {
+    if (license === "MIT") {
       img = "https://img.shields.io/badge/License-MIT-yellow.svg";
     }
-    else if (data.license === "IBM Public License Version 1.0") {
+    else if (license === "IBM Public License Version 1.0") {
       img = "https://img.shields.io/badge/License-IPL%201.0-blue.svg";
     }
-    else if (data.license === "ISC") {
+    else if (license === "ISC") {
       img = "https://img.shields.io/badge/License-IPL%201.0-blue.svg"
     }
     else {img = "";
   };
-  return badge;
+  return `[![${name}](${img})]`;
 }
 
 // TODO: Create a function that returns the license link
@@ -26,13 +25,13 @@ function renderLicenseLink(license) {
 
   var link = "";
 
-  if (data.license === "MIT") {
+  if (license == "MIT") {
     link = "(https://opensource.org/licenses/MIT)";
   }
-  else if (data.license === "IBM Public License Version 1.0") {
+  else if (license === "IBM Public License Version 1.0") {
     link = "(https://opensource.org/licenses/IPL-1.0)";
   }
-  else if (data.license === "ISC") {
+  else if (license === "ISC") {
     link = "(https://opensource.org/licenses/ISC)"
   }
   else {link = "";
@@ -50,52 +49,68 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   return `${data.title}
 ====
-${renderLicenseSection}
+${renderLicenseSection(data.license)}
+
 
 ----
 
-## Table of Contents
-[Description](#Description)
-[Description](#Description)
-[Installation](#Installation)
-[Usage](#Usage)
-[Contributing](#Contributing)
-[Test](#Test)
-[Questions?](#Questions?)
+
+# Table of Contents
+[Description](#Description) <br>
+[Installation](#Installation) <br>
+[Usage](#Usage) <br>
+[Contributing](#Contributing) <br>
+[Test](#Test) <br>
+[Questions?](#Questions?) <br>
+
 
 ----
 
-## Description
+
+# Description
 ${data.description}
 
+
 ----
 
-## License
+
+# License
 This application is covered under the ${data.license} license.
+
+
 ----
 
-## Installation
+
+# Installation
 In order to use the README generator one only need install Inquirer.js. Simply run ${data.dependencies} in your integrated terminal. 
 
+
 ----
 
-## Usage 
+
+# Usage 
 ${data.usage}
 
+
 ----
 
-## Contributing 
+
+# Contributing 
 ${data.contribute}
 
+
 ----
 
-## Test 
+
+# Test 
 ${data.test}
 
+
 ----
 
-## Questions?
-GitHub Username: ${data.username}
+
+# Questions?
+GitHub Username: ${data.username} <br>
 E-mail: ${data.email}
 
 ----
